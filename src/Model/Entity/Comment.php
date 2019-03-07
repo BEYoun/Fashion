@@ -4,17 +4,17 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Piece Entity
+ * Comment Entity
  *
  * @property int $id
- * @property \Cake\I18n\FrozenTime|null $created
- * @property float $price
- * @property string|null $photo
- * @property int $categories_id
+ * @property string $pseudo
+ * @property string $mail
+ * @property string $content
+ * @property int $post_id
  *
- * @property \App\Model\Entity\Category $category
+ * @property \App\Model\Entity\Post $post
  */
-class Piece extends Entity
+class Comment extends Entity
 {
 
     /**
@@ -27,10 +27,10 @@ class Piece extends Entity
      * @var array
      */
     protected $_accessible = [
-        'created' => true,
-        'price' => true,
-        'photo' => true,
-        'categories_id' => true,
-        'category' => true
+        'pseudo' => true,
+        'mail' => true,
+        'content' => true,
+        'post_id' => true,
+        'post' => true
     ];
 }
