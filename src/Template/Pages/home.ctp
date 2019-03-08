@@ -32,18 +32,18 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>aStar</title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="aStar Fashion Template Project">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.3/bootstrap.css">
-<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
-<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+    <title>aStar</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="aStar Fashion Template Project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.3/bootstrap.css">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+    <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 </head>
 <body>
 
@@ -66,8 +66,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             <nav class="header_nav">
                 <ul class="d-flex flex-row align-items-center justify-content-start">
                     <li><a href="index.html">home</a></li>
-                    <li><a href="#">woman</a></li>
-                    <li><a href="#">man</a></li>
+                    <li><a href="http://localhost/fashion/users/login">login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                    <li><a href="#">WOMAN</a></li>
                     <li><a href="#">lookbook</a></li>
                     <li><?php $this->Html->link("BLOG", ['controller'=>'posts','action'=>'index']) ?></li>
                     <li><a href="#">contact</a></li>
@@ -120,19 +120,16 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 
                 </div>
 
-                <div>
-                    <li>
-                        <?= $this->Html->link('LOGIN', ['controller'=>'users','action'=>'login']) ?>
-                    </li>
-                </div>
+                
 
-                <!-- Cart -->
+                    <!-- Cart -->
+                <!-- 
                 <div class="cart d-flex flex-row align-items-center justify-content-start">
                     <div class="cart_icon"><a href="cart.html">
                         <img src="images/bag.png" alt="">
                         <div class="cart_num">2</div>
                     </a></div>
-                </div>
+                </div> -->
 
             </div>
 
@@ -200,8 +197,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
         <nav class="menu_nav">
             <ul class="menu_mm">
                 <li class="menu_mm"><a href="index.html">home</a></li>
+                <li class="menu_mm"><a href="#">login</a></li>
                 <li class="menu_mm"><a href="#">woman</a></li>
-                <li class="menu_mm"><a href="#">man</a></li>
                 <li class="menu_mm"><a href="#">lookbook</a></li>
                 <li class="menu_mm"><a href="blog.html">blog</a></li>
                 <li class="menu_mm"><a href="contact.html">contact</a></li>
@@ -275,16 +272,23 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 
         <!-- Logo -->
         <div class="sidebar_logo">
-            <a href="#"><div>a<span>star</span></div></a>
+            <!-- <a href="#"><div>a<span>star</span></div></a> -->
+            <?php
+            echo $this->Html->image("logo2.png", [
+                "alt" => "Fashion Shifter",
+                'url' => ['controller' => 'Pages', 'action' => 'index'],
+                "width" => "220"
+            ]);
+            ?>
         </div>
 
         <!-- Sidebar Navigation -->
         <nav class="sidebar_nav">
             <ul>
-                <li><a href="index.html">home<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                <li><a href="#">woman<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                <li><a href="#">man<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                <li><a href="#">lookbook<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <li><a href="<?=$this->request->base?>">home<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <li><a href="<?=$this->request->base?>/users/login">login<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                <li><a href="#">woman<i class="fa fa-angle-right" aria-hidden="true"></i></a></li><!-- 
+                <li><a href="#">lookbook<i class="fa fa-angle-right" aria-hidden="true"></i></a></li> -->
                 <li><a href="posts/">blog<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
                 <li><a href="#">contact<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
             </ul>
@@ -299,14 +303,14 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
         </div>
 
         <!-- Cart -->
-        <div class="cart d-flex flex-row align-items-center justify-content-start">
+        <!-- <div class="cart d-flex flex-row align-items-center justify-content-start">
             <div class="cart_icon"><a href="cart.html">
                 <img src="images/bag.png" alt="">
                 <div class="cart_num">2</div>
             </a></div>
             <div class="cart_text">bag</div>
             <div class="cart_price">$39.99 (1)</div>
-        </div>
+        </div> -->
     </div>
 
     <!-- Home -->
@@ -588,100 +592,16 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             <div class="section_container">
                 <div class="container">
                     <div class="row">
-                        
-                        <!-- About -->
-                        <div class="col-xxl-3 col-md-6 footer_col">
-                            <div class="footer_about">
-                                <!-- Logo -->
-                                <div class="footer_logo">
-                                    <a href="#"><div>a<span>star</span></div></a>
-                                </div>
-                                <div class="footer_about_text">
-                                    <p>Donec vitae purus nunc. Morbi faucibus erat sit amet congue mattis. Nullam fringilla faucibus urna, id dapibus erat iaculis ut. Integer ac sem.</p>
-                                </div>
-                                <div class="cards">
-                                    <ul class="d-flex flex-row align-items-center justify-content-start">
-                                        <li><a href="#"><img src="images/card_1.jpg" alt=""></a></li>
-                                        <li><a href="#"><img src="images/card_2.jpg" alt=""></a></li>
-                                        <li><a href="#"><img src="images/card_3.jpg" alt=""></a></li>
-                                        <li><a href="#"><img src="images/card_4.jpg" alt=""></a></li>
-                                        <li><a href="#"><img src="images/card_5.jpg" alt=""></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Questions -->
-                        <div class="col-xxl-3 col-md-6 footer_col">
-                            <div class="footer_questions">
-                                <div class="footer_title">questions</div>
-                                <div class="footer_list">
-                                    <ul>
-                                        <li><a href="#">About us</a></li>
-                                        <li><a href="#">Track Orders</a></li>
-                                        <li><a href="#">Returns</a></li>
-                                        <li><a href="#">Jobs</a></li>
-                                        <li><a href="#">Shipping</a></li>
-                                        <li><a href="#">Blog</a></li>
-                                        <li><a href="#">Partners</a></li>
-                                        <li><a href="#">Bloggers</a></li>
-                                        <li><a href="#">Support</a></li>
-                                        <li><a href="#">Terms of Use</a></li>
-                                        <li><a href="#">Press</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Blog -->
-                        <div class="col-xxl-3 col-md-6 footer_col">
-                            <div class="footer_blog">
-                                <div class="footer_title">blog</div>
-                                <div class="footer_blog_container">
-
-                                    <!-- Blog Item -->
-                                    <div class="footer_blog_item d-flex flex-row align-items-start justify-content-start">
-                                        <div class="footer_blog_image"><a href="blog.html"><img src="images/footer_blog_1.jpg" alt=""></a></div>
-                                        <div class="footer_blog_content">
-                                            <div class="footer_blog_title"><a href="blog.html">what shoes to wear</a></div>
-                                            <div class="footer_blog_date">june 06, 2018</div>
-                                            <div class="footer_blog_link"><a href="blog.html">Read More</a></div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Blog Item -->
-                                    <div class="footer_blog_item d-flex flex-row align-items-start justify-content-start">
-                                        <div class="footer_blog_image"><a href="blog.html"><img src="images/footer_blog_2.jpg" alt=""></a></div>
-                                        <div class="footer_blog_content">
-                                            <div class="footer_blog_title"><a href="blog.html">trends this year</a></div>
-                                            <div class="footer_blog_date">june 06, 2018</div>
-                                            <div class="footer_blog_link"><a href="blog.html">Read More</a></div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Contact -->
-                        <div class="col-xxl-3 col-md-6 footer_col">
-                            <div class="footer_contact">
-                                <div class="footer_title">contact</div>
-                                <div class="footer_contact_list">
-                                    <ul>
-                                        <li class="d-flex flex-row align-items-start justify-content-start"><span>C.</span><div>Your Company Ltd</div></li>
-                                        <li class="d-flex flex-row align-items-start justify-content-start"><span>A.</span><div>1481 Creekside Lane  Avila Beach, CA 93424, P.O. BOX 68</div></li>
-                                        <li class="d-flex flex-row align-items-start justify-content-start"><span>T.</span><div>+53 345 7953 32453</div></li>
-                                        <li class="d-flex flex-row align-items-start justify-content-start"><span>E.</span><div>office@youremail.com</div></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        <p>
+                            Made by : <br>
+                            <em><b>ELBAZ Anass</b></em><br>
+                             & <br>
+                            <em><b>BEAILA Younes</b></em><br>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-
         <!-- Social -->
         <div class="footer_social">
             <div class="section_container">

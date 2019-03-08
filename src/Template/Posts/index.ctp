@@ -169,7 +169,19 @@
                                 <div class="blog_post_image"><img src="<?= $this->request->base ?>/images/blog_<?= $key+1 ?>.jpg" alt="https://unsplash.com/@saskiafairfull"></div>
                                 <div class="blog_post_content">
                                     <div class="blog_post_date"><a href="#">June 18, 2018</a></div>
+                                    <?php 
+                                      if($this->request->session()->read('Auth.User.role')=='admin'){
+
+
+                                    ?>
                                     <div class="blog_post_date" style="background: red;margin-left: 180px;margin-top: -38px;"><a href="#">Delete</a></div>
+                                    <?php
+
+
+                                      } 
+
+
+                                      ?>
                                     <div class="blog_post_title"><!-- <a href="#"><?= $value['title'] ?></a> --><?= $this->Html->link($value['title'],['action'=>'view',$value['id']]) ?>
                                     </div>
                                     <div class="blog_post_info d-flex flex-row align-items-start justify-content-start">
@@ -199,13 +211,22 @@
                 
                 <div class="row load_more_row">
                     <div class="col">
-                        <div class="load_more_button trans_200 ml-auto mr-auto"><a rel="prev" href="/Fashion/posts">previous</a></div>
+                        <div class="load_more_button trans_200 ml-auto mr-auto"><a rel="prev" href="<?= $this->request->base ?>/posts">previous</a></div>
                     </div>
                     <div class="col">
-                         <div class="load_more_button trans_200 ml-auto mr-auto" style="margin-left: -30px"><a rel="next" href="/Fashion/posts?page=2">Next »</a></div>
+                         <div class="load_more_button trans_200 ml-auto mr-auto" style="margin-left: -30px"><a rel="next" href="<?= $this->request->base ?>/posts?page=2">Next »</a></div>
                     </div>
                     <div class="col">
+                      <?php 
+                                      if($this->request->session()->read('Auth.User.role')=='admin'){
+
+
+                                    ?>
                         <div class="load_more_button trans_200 ml-auto mr-auto" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><a href="#">Add article</a></div>
+
+                        <?php
+                          }
+                        ?>
                     </div>
 
                 </div>

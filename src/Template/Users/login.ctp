@@ -53,15 +53,7 @@
 										<td><label>Password</label></td>
 										<td><input type="password" name="password"></td>
 									</tr>
-									<tr>
-										<td><label>Role</label></td>
-										<td>
-											 <select name="role">
-												<option value="client">Client</option>
-												<option value="admin">Adminitrator</option>
-											</select> 
-										</td>
-									</tr>
+									
 									<tr>
 										<td></td>
 										<td><input type="submit" name="submit" value="Login" class="btn btn-success"></td>
